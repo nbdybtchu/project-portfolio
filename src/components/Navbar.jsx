@@ -15,7 +15,7 @@ const Navbar = () => {
         e.preventDefault();
         const targetElement = document.querySelector(href);
         if (targetElement) {
-            const offset = -85;
+            const offset = -0;
             const elementPosition = targetElement.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.scrollY + offset;
 
@@ -27,14 +27,23 @@ const Navbar = () => {
         setIsMobileMenuOpen(false);
     };
 
+    const handleLogoClick = (e) => {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+        setIsMobileMenuOpen(false);
+    };
+
     return (
         <div>
             <nav className="fixed left-0 right-0 top-4 z-50">
                 {/* Desktop Menu */}
-                <div className="mx-auto hidden max-w-xl items-center justify-center rounded-lg bg-black/20 py-3 backdrop-blur-lg lg:flex">
-                    <div className="flex justify-between gap-6">
+                <div className="mx-auto hidden max-w-sm items-center justify-center rounded-lg bg-black/20 py-3 backdrop-blur-lg lg:flex">
+                    <div className="flex justify-between gap-12">
                         <div className="m-auto">
-                            <a href="#">
+                            <a href="#" onClick={handleLogoClick}>
                                 <img src={logo} width={90} alt="logo" />
                             </a>
                         </div>
@@ -55,8 +64,8 @@ const Navbar = () => {
                 </div>
                 {/* Mobile Menu */}
                 <div className="rounded-lg backdrop-blur-md lg:hidden">
-                    <div className="flex items-center justify-center">
-                        <a href="#">
+                    <div className="flex items-center justify-between px-6">
+                        <a href="#" onClick={handleLogoClick}>
                             <img src={logo} width={90} alt="logo" className="m-2" />
                         </a>
                         <div className="flex items-center">
@@ -70,7 +79,7 @@ const Navbar = () => {
                         </div>
                     </div>
                     {isMobileMenuOpen && (
-                        <ul className='ml-4 mt-4 flex flex-col gap-4 backdrop-blur-md'>
+                        <ul className='ml-4 mt-4 flex flex-col gap-4 backdrop-blur-md items-center py-4'>
                             {NAVIGATION_LINKS.map((item, index) => (
                                 <li key={index}>
                                     <a className="block w-full text-xl font-semibold" href={item.href} onClick={(e) => handleLinkClick(e, item.href)}>
