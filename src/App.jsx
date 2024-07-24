@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import About from "./components/About";
 import Projects from "./components/Projects";
+import ContactForm from "./components/ContactForm";
 
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
       <HeroSection />
       <About />
       <Projects />
+      <ContactForm />
       </div>
     </main>
   )

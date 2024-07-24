@@ -44,14 +44,14 @@ const Navbar = () => {
                     <div className="flex justify-between gap-12">
                         <div className="m-auto">
                             <a href="#" onClick={handleLogoClick}>
-                                <img src={logo} width={90} alt="logo" />
+                                <img src={logo} width={70} alt="logo" />
                             </a>
                         </div>
                         <div className="py-4">
                             <ul className="flex items-center gap-4 ">
                                 {NAVIGATION_LINKS.map((item, index) => (
                                     <li key={index}>
-                                        <a className="text-sm hover:text-green-700 font-semibold"
+                                        <a className="text-sm hover:text-blue-500 font-semibold"
                                             href={item.href}
                                             onClick={(e) => handleLinkClick(e, item.href)}>
                                             {item.label}
