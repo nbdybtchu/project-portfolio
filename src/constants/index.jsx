@@ -1,9 +1,7 @@
 import {
-  FaXTwitter,
   FaGithub,
   FaLinkedin,
   FaFacebook,
-  FaDiscord,
   FaInstagram,
 } from "react-icons/fa6";
 
@@ -14,15 +12,6 @@ import { RiTailwindCssFill } from "react-icons/ri";
 import { FaNodeJs } from "react-icons/fa";
 import { FaGitAlt } from "react-icons/fa";
 
-import image1 from "../assets/project1.jpeg";
-import image2 from "../assets/project2.jpeg";
-import image3 from "../assets/project3.jpeg";
-import image4 from "../assets/project4.jpeg";
-import image5 from "../assets/project5.jpeg";
-import image6 from "../assets/project6.jpeg";
-import image7 from "../assets/project7.jpeg";
-import image8 from "../assets/project8.jpeg";
-
 export const NAVIGATION_LINKS = [
   { label: "About", href: "#about" },
   { label: "Projects", href: "#projects" },
@@ -31,56 +20,8 @@ export const NAVIGATION_LINKS = [
 
 export const PROFILE = {
   name: "Chu Arib",
-  info: "Welcome to my Portfolio! Have a look around.",
+  info: "Welcome to my Portfolio. Have a look around.",
 };
-
-export const PROJECTS = [
-  {
-    title: "E-commerce Platform",
-    subtitle:
-      "A full-stack e-commerce platform built with React, Node.js, and MongoDB.",
-    image: image1,
-  },
-  {
-    title: "Social Media App",
-    subtitle:
-      "A social media application developed using Next.js and Firebase.",
-    image: image2,
-  },
-  {
-    title: "Project Management Tool",
-    subtitle: "A project management tool built with Django and PostgreSQL.",
-    image: image3,
-  },
-  {
-    title: "Personal Portfolio",
-    subtitle:
-      "A personal portfolio website designed with HTML, CSS, and JavaScript.",
-    image: image4,
-  },
-  {
-    title: "Weather Dashboard",
-    subtitle:
-      "A weather dashboard application built with Vue.js and Express.js.",
-    image: image5,
-  },
-  {
-    title: "Blog Platform",
-    subtitle:
-      "A blogging platform developed with Ruby on Rails and PostgreSQL.",
-    image: image6,
-  },
-  {
-    title: "Fitness Tracker",
-    subtitle: "A fitness tracking app created using Flutter and Firebase.",
-    image: image7,
-  },
-  {
-    title: "Recipe Finder",
-    subtitle: "A recipe finder application developed with Angular and Node.js.",
-    image: image8,
-  },
-];
 
 export const SKILLS = [
   {
@@ -111,27 +52,19 @@ export const SKILLS = [
 
 export const SOCIAL_MEDIA_LINKS = [
   {
-    href: "https://x.com/",
-    icon: <FaFacebook fontSize={25} className="hover:opacity-80" />,
+    href: "https://www.facebook.com/nbdybtchu",
+    icon: <FaFacebook fontSize={25} className="hover:bg-blue-800 rounded-full" />,
   },
   {
-    href: "https://x.com/",
-    icon: <FaDiscord fontSize={25} className="hover:opacity-80" />,
+    href: "https://www.instagram.com/nbdybtchu/",
+    icon: <FaInstagram fontSize={25} className="hover:bg-pink-700 rounded" />,
   },
   {
-    href: "https://x.com/",
-    icon: <FaInstagram fontSize={25} className="hover:opacity-80" />,
+    href: "https://github.com/nbdybtchu",
+    icon: <FaGithub fontSize={25} className="hover:bg-blue-900 rounded-full" />,
   },
   {
-    href: "https://x.com/",
-    icon: <FaXTwitter fontSize={25} className="hover:opacity-80" />,
-  },
-  {
-    href: "https://github.com/",
-    icon: <FaGithub fontSize={25} className="hover:opacity-80" />,
-  },
-  {
-    href: "https://www.linkedin.com/",
-    icon: <FaLinkedin fontSize={25} className="hover:opacity-80" />,
+    href: "https://www.linkedin.com/in/chuarib/",
+    icon: <FaLinkedin fontSize={25} className="hover:bg-blue-900 rounded" />,
   },
 ];

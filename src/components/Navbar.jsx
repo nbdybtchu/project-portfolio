@@ -3,6 +3,7 @@ import logo from "../assets/logo.png";
 import { NAVIGATION_LINKS } from "../constants";
 import { FaBars } from 'react-icons/fa6';
 import { FaTimes } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
 const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -36,6 +37,27 @@ const Navbar = () => {
         setIsMobileMenuOpen(false);
     };
 
+    const list = {
+        visible: {
+          opacity: 1,
+          transition: {
+            when: "beforeChildren",
+            staggerChildren: 0.3,
+          },
+        },
+        hidden: {
+          opacity: 0,
+          transition: {
+            when: "afterChildren",
+          },
+        },
+      }
+      
+      const listItem = {
+        visible: { opacity: 1, x: 0 },
+        hidden: { opacity: 0, x: -100 },
+      }
+
     return (
         <div>
             <nav className="fixed left-0 right-0 top-4 z-50">
@@ -51,7 +73,7 @@ const Navbar = () => {
                             <ul className="flex items-center gap-4 ">
                                 {NAVIGATION_LINKS.map((item, index) => (
                                     <li key={index}>
-                                        <a className="text-sm hover:text-blue-500 font-semibold"
+                                        <a className="text-sm hover:text-green-500 font-semibold"
                                             href={item.href}
                                             onClick={(e) => handleLinkClick(e, item.href)}>
                                             {item.label}
@@ -66,7 +88,7 @@ const Navbar = () => {
                 <div className="rounded-lg backdrop-blur-md lg:hidden">
                     <div className="flex items-center justify-between px-6">
                         <a href="#" onClick={handleLogoClick}>
-                            <img src={logo} width={90} alt="logo" className="m-2" />
+                            <img src={logo} width={60} alt="logo" className="m-2" />
                         </a>
                         <div className="flex items-center">
                             <button className="focus:outline-none lg:hidden" onClick={toggleMobileMenu}>
@@ -79,15 +101,21 @@ const Navbar = () => {
                         </div>
                     </div>
                     {isMobileMenuOpen && (
-                        <ul className='ml-4 mt-4 flex flex-col gap-4 backdrop-blur-md items-center py-4'>
+                        <motion.ul 
+                        initial="hidden"
+                        animate="visible"
+                        variants={list}
+                        className='ml-4 mt-4 flex flex-col gap-4 backdrop-blur-md items-center py-4'>
                             {NAVIGATION_LINKS.map((item, index) => (
-                                <li key={index}>
-                                    <a className="block w-full text-xl font-semibold" href={item.href} onClick={(e) => handleLinkClick(e, item.href)}>
+                                <motion.li 
+                                variants={listItem}
+                                key={index}>
+                                    <a className="block w-full text-xl font-semibold hover:text-green-600" href={item.href} onClick={(e) => handleLinkClick(e, item.href)}>
                                         {item.label}
                                     </a>
-                                </li>
+                                </motion.li>
                             ))}
-                        </ul>
+                        </motion.ul>
                     )}
                 </div>
             </nav>
