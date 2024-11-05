@@ -27,35 +27,35 @@ export const PROFILE = {
 
 export const SKILLS = [
   {
-    icon: <RiReactjsLine className="text-4xl lg:text-5xl text-cyan-400" />,
+    icon: <RiReactjsLine className="text-2xl lg:text-3xl text-cyan-400" />,
     name: "React",
   },
   {
-    icon: <TbBrandNextjs className="text-4xl lg:text-5xl text-white" />,
+    icon: <TbBrandNextjs className="text-2xl lg:text-3xl text-white" />,
     name: "Next.js",
   },
   {
-    icon: <RiTailwindCssFill className="text-4xl lg:text-5xl text-blue-400" />,
+    icon: <RiTailwindCssFill className="text-2xl lg:text-3xl text-blue-400" />,
     name: "Tailwind CSS",
   },
   {
-    icon: <SiMongodb className="text-4xl lg:text-5xl text-green-600" />,
+    icon: <SiMongodb className="text-2xl lg:text-3xl text-green-600" />,
     name: "MongoDB",
   },
   {
-    icon: <FaNodeJs className="text-4xl lg:text-5xl text-green-600" />,
+    icon: <FaNodeJs className="text-2xl lg:text-3xl text-green-600" />,
     name: "Node.js",
   },
   {
-    icon: <FaGitAlt className="text-4xl lg:text-5xl text-orange-600" />,
+    icon: <FaGitAlt className="text-2xl lg:text-3xl text-orange-600" />,
     name: "Git",
   },
   {
-    icon: <SiSanity className="text-4xl lg:text-5xl text-red-700" />,
+    icon: <SiSanity className="text-2xl lg:text-3xl text-red-700" />,
     name: "Sanity",
   },
   {
-    icon: <PiFigmaLogoDuotone className="text-4xl lg:text-5xl text-pink-500" />,
+    icon: <PiFigmaLogoDuotone className="text-2xl lg:text-3xl text-pink-500" />,
     name: "Figma",
   },
 ];
