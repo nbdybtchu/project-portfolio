@@ -11,9 +11,11 @@ import { SiMongodb } from "react-icons/si";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { FaNodeJs } from "react-icons/fa";
 import { FaGitAlt } from "react-icons/fa";
+import { SiSanity } from "react-icons/si";
+import { PiFigmaLogoDuotone } from "react-icons/pi";
+
 
 export const NAVIGATION_LINKS = [
-  { label: "About", href: "#about" },
   { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];
@@ -45,8 +47,16 @@ export const SKILLS = [
     name: "Node.js",
   },
   {
-    icon: <FaGitAlt className="text-4xl lg:text-5xl text-orange-700" />,
+    icon: <FaGitAlt className="text-4xl lg:text-5xl text-orange-600" />,
     name: "Git",
+  },
+  {
+    icon: <SiSanity className="text-4xl lg:text-5xl text-red-700" />,
+    name: "Sanity",
+  },
+  {
+    icon: <PiFigmaLogoDuotone className="text-4xl lg:text-5xl text-pink-500" />,
+    name: "Figma",
   },
 ];
 

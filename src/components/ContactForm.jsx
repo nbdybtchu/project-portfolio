@@ -72,7 +72,7 @@ const ContactForm = () => {
         <motion.form 
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1}}
-        transition={{ duration: 0.8, delay: 1}}
+        transition={{ duration: 0.6, delay: 0.5}}
         onSubmit={handleSubmit}>
             <div className="mb-4">
                 <input type="text"

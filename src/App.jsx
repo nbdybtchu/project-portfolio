@@ -1,7 +1,6 @@
 import Intro from "./components/Intro";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
-import About from "./components/About";
 import ProjectsSection from "./components/ProjectsSection";
 import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
@@ -14,7 +13,6 @@ const App = () => {
       <div>
       <Navbar />
       <HeroSection />
-      <About />
       <ProjectsSection />
       <ContactForm />
       <Footer />

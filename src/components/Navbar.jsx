@@ -1,12 +1,14 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import logo from "../assets/logo.png";
 import { NAVIGATION_LINKS } from "../constants";
 import { FaBars } from 'react-icons/fa6';
 import { FaTimes } from 'react-icons/fa';
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 
 const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isVisible, setIsVisible] = useState(true); // Track visibility
+    const controls = useAnimation();
 
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -37,32 +39,42 @@ const Navbar = () => {
         setIsMobileMenuOpen(false);
     };
 
-    const list = {
-        visible: {
-          opacity: 1,
-          transition: {
-            when: "beforeChildren",
-            staggerChildren: 0.3,
-          },
-        },
-        hidden: {
-          opacity: 0,
-          transition: {
-            when: "afterChildren",
-          },
-        },
-      }
-      
-      const listItem = {
-        visible: { opacity: 1, x: 0 },
-        hidden: { opacity: 0, x: -100 },
-      }
+    // Scroll detection
+    useEffect(() => {
+        let lastScrollY = window.scrollY;
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+            if (currentScrollY > lastScrollY) {
+                setIsVisible(false); // Scrolling down
+            } else {
+                setIsVisible(true); // Scrolling up
+            }
+            lastScrollY = currentScrollY;
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    useEffect(() => {
+        if (isVisible) {
+            controls.start({ y: 0, opacity: 1 });
+        } else {
+            controls.start({ y: -100, opacity: 0 });
+        }
+    }, [isVisible, controls]);
 
     return (
-        <div>
-            <nav className="fixed left-0 right-0 top-4 z-50">
+        <motion.div
+            className="fixed left-0 right-0 top-4 z-50"
+            animate={controls}
+            initial={{ y: 0, opacity: 1 }} // Initial state
+        >
+            <nav>
                 {/* Desktop Menu */}
-                <div className="mx-auto hidden max-w-sm items-center justify-center rounded-lg bg-black/20 py-3 backdrop-blur-lg lg:flex">
+                <div className="mx-auto hidden max-w-sm items-center justify-center rounded-lg bg-black/10 py-1 backdrop-blur-lg lg:flex">
                     <div className="flex justify-between gap-12">
                         <div className="m-auto">
                             <a href="#" onClick={handleLogoClick}>
@@ -70,10 +82,10 @@ const Navbar = () => {
                             </a>
                         </div>
                         <div className="py-4">
-                            <ul className="flex items-center gap-4 ">
+                            <ul className="flex items-center gap-4">
                                 {NAVIGATION_LINKS.map((item, index) => (
                                     <li key={index}>
-                                        <a className="text-sm hover:text-green-500 font-semibold"
+                                        <a className="text-sm hover:text-green-500 font-black uppercase"
                                             href={item.href}
                                             onClick={(e) => handleLinkClick(e, item.href)}>
                                             {item.label}
@@ -102,14 +114,16 @@ const Navbar = () => {
                     </div>
                     {isMobileMenuOpen && (
                         <motion.ul 
-                        initial="hidden"
-                        animate="visible"
-                        variants={list}
-                        className='ml-4 mt-4 flex flex-col gap-4 backdrop-blur-md items-center py-4'>
+                            initial="hidden"
+                            animate="visible"
+                            variants={{
+                                visible: { opacity: 1, transition: { duration: 0.3 } },
+                                hidden: { opacity: 0, transition: { duration: 0.3 } }
+                            }}
+                            className='ml-4 mt-4 flex flex-col gap-4 backdrop-blur-md items-center py-4'>
                             {NAVIGATION_LINKS.map((item, index) => (
                                 <motion.li 
-                                variants={listItem}
-                                key={index}>
+                                    key={index}>
                                     <a className="block w-full text-xl font-semibold hover:text-green-600" href={item.href} onClick={(e) => handleLinkClick(e, item.href)}>
                                         {item.label}
                                     </a>
@@ -119,7 +133,7 @@ const Navbar = () => {
                     )}
                 </div>
             </nav>
-        </div>
+        </motion.div>
     );
 };
 
