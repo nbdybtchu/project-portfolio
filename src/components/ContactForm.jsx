@@ -81,7 +81,7 @@ const ContactForm = () => {
                     value={formData.name}
                     placeholder="Name"
                     onChange={handleChange}
-                    className="mb-8 w-full appearance-none rounded-lg border border-blue-900 bg-transparent px-3 py-2 text-sm focus:border-gray-400 focus:outline-none" />
+                    className="mb-8 w-full appearance-none rounded-lg border border-green-900 bg-transparent px-3 py-2 text-sm focus:border-gray-400 focus:outline-none" />
                     {errors.name && (
                         <motion.p 
                         initial={{ opacity: 0 }}
@@ -96,7 +96,7 @@ const ContactForm = () => {
                     value={formData.email}
                     placeholder="johndoe@sample.com"
                     onChange={handleChange}
-                    className="mb-8 w-full appearance-none rounded-lg border border-blue-900 bg-transparent px-3 py-2 text-sm focus:border-gray-400 focus:outline-none" />
+                    className="mb-8 w-full appearance-none rounded-lg border border-green-900 bg-transparent px-3 py-2 text-sm focus:border-gray-400 focus:outline-none" />
                     {errors.email && (
                         <motion.p 
                         initial={{ opacity: 0 }}
@@ -111,7 +111,7 @@ const ContactForm = () => {
                     value={formData.message}
                     placeholder="Message"
                     onChange={handleChange}
-                    className="mb-8 w-full appearance-none rounded-lg border border-blue-900 bg-transparent px-3 py-2 text-sm focus:border-gray-400 focus:outline-none" rows="4" />
+                    className="mb-8 w-full appearance-none rounded-lg border border-green-900 bg-transparent px-3 py-2 text-sm focus:border-gray-400 focus:outline-none" rows="4" />
                     {errors.message && (
                         <motion.p 
                         initial={{ opacity: 0 }}
@@ -119,7 +119,7 @@ const ContactForm = () => {
                         className="text-sm text-pink-700">{errors.message}</motion.p>
                     )}
             </div>
-            <button type="submit" className={ `mb-8 w-full rounded bg-green-500 px-4 py-2 text-sm font-semibold text-slate-950 hover:bg-green-700 $ { isSending ? "cursor-not-allowed opacity-50" : "" }`}
+            <button type="submit" className={ `mb-8 w-full rounded bg-green-700 px-4 py-2 text-sm font-semibold text-slate-950 hover:bg-green-800 $ { isSending ? "cursor-not-allowed opacity-50" : "" }`}
             disabled={isSending}>
                 {isSending ? "Sending..." : "Send"}
             </button>

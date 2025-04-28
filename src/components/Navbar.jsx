@@ -82,7 +82,7 @@ const Navbar = () => {
                                 {NAVIGATION_LINKS.map((item, index) => (
                                     <li key={index}>
                                         <a
-                                            className="text-sm hover:text-green-500 font-black uppercase"
+                                            className="text-sm hover:text-green-700 font-black uppercase"
                                             href={item.href}
                                             onClick={(e) => handleLinkClick(e, item.href)}
                                         >
@@ -122,7 +122,7 @@ const Navbar = () => {
                             {NAVIGATION_LINKS.map((item, index) => (
                                 <motion.li key={index} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: index * 0.1 }}>
                                     <a
-                                        className="block w-full text-xl font-semibold hover:text-green-600"
+                                        className="block w-full text-xl font-semibold hover:text-green-700"
                                         href={item.href}
                                         onClick={(e) => handleLinkClick(e, item.href)}
                                     >
