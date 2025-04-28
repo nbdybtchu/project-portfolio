@@ -21,7 +21,7 @@ export const NAVIGATION_LINKS = [
 ];
 
 export const PROFILE = {
-  name: "Chu Arib",
+  name: "Booker Arib",
   info: "Welcome to my Portfolio. Have a look around.",
 };
 

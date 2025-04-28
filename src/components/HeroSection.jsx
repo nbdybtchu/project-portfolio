@@ -11,7 +11,7 @@ const TAB_DATA = [
     title: "Skills",
     id: "skills",
     content: (
-      <div className="grid grid-cols-2 sm:grid-cols-3">
+      <div className="grid grid-cols-2 sm:grid-cols-3 px-1">
         {SKILLS.map((skills, index) => (
           <motion.div
             key={index}
@@ -31,7 +31,7 @@ const TAB_DATA = [
               <div className="w-auto h-auto">
                 {React.cloneElement(skills.icon, { width: '100%', height: '100%' })}
               </div>
-              <h3 className="px-4 text-lg">{skills.name}</h3>
+              <h3 className="px-4 text-base">{skills.name}</h3>
             </div>
           </motion.div>
         ))}
@@ -95,17 +95,17 @@ const HeroSection = () => {
           ></motion.div>
         </>
       )}
-      <div className="relative z-20 flex w-full md:w-1/2 px-6 sm:px-14 pt-24">
+      <div className="relative z-20 flex w-full md:w-1/2 px-6 sm:px-14 pt-10 md:pt-30 lg:pt-30 items-center justify-center flex-col text-left">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: isIntroComplete ? 1 : 0 }}
           transition={{ duration: 2, delay: isIntroComplete ? 0.5 : 0 }}
           className="w-full"
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase tracking-wide text-left text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-green-1100 font-sans">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase tracking-base text-left text-transparent bg-clip-text bg-gradient-to-r from-green-700 to-green-900">
             {PROFILE.name}
           </h1>
-          <div className="pt-2 text-xs font-extrabold uppercase px-2 text-[#efefef]">
+          <div className="pt-2 text-xs font-extrabold uppercase px-1 text-[#efefef]">
             <TypeAnimation
               sequence={[
                 "Full-stack React Developer",
@@ -122,25 +122,23 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: -40 }}
             animate={{ opacity: isIntroComplete ? 1 : 0, y: isIntroComplete ? 0 : -40 }}
             transition={{ duration: 1 }}
-            className="text-2xl md:text-3xl font-extrabold text-white mt-8"
+            className="text-1xl md:text-2xl font-extrabold text-white px-1 mt-8 tracking-normal"
           >
-            Hi! Feel free to look around.
+            Building, Learning, and Keeping it Simple.
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: isIntroComplete ? 1 : 0, x: isIntroComplete ? 0 : -40 }}
             transition={{ duration: 1.5 }}
-            className="text-sm md:text-base mt-4"
+            className="text-sm md:text-base/5 mt-4 tracking-normal px-1 text-gray-300"
           >
-            I am a Full Stack React Developer passionate about building interactive and responsive web applications.
-            Proficient in JavaScript, React, Node.js, and modern web tools,
-            I am a quick learner and collaborative team player eager to create impactful applications.
+            Full Stack React Developer with a passion for continuous learning and building solutions that matter. From designing responsive interfaces to creating dynamic web applications, I use my expertise in JavaScript, React, and Node.js to craft solutions that grow with the needs of users.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: isIntroComplete ? 1 : 0, y: isIntroComplete ? 0 : 40 }}
             transition={{ duration: 1 }}
-            className="flex flex-row justify-start mt-8"
+            className="flex flex-row justify-start px-1 mt-10"
           >
             <TabButton
               selectTab={() => handleTabChange("skills")}

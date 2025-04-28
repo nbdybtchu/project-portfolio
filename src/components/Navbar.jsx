@@ -70,7 +70,7 @@ const Navbar = () => {
         >
             <nav>
                 {/* Desktop Menu */}
-                <div className="mx-auto hidden max-w-sm items-center justify-center rounded-lg bg-black/10 py-1 backdrop-blur-lg lg:flex">
+                <div className="mx-auto hidden max-w-sm items-center justify-center rounded-lg bg-black/30 py-1 backdrop-blur-lg lg:flex">
                     <div className="flex justify-between gap-12">
                         <div className="m-auto">
                             <a href="#" onClick={handleLogoClick}>

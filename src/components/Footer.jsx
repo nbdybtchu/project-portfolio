@@ -14,8 +14,8 @@ const Footer = () => {
                 </a>
             ))}
         </div>
-        <p className="mt-4 text-center text-sm tracking-wide text-gray-400">
-            &copy; Chu Arib | Web Developer | All rights reserved.
+        <p className="mt-4 text-center text-sm font-semibold tracking-wide text-gray-500">
+            &copy; Booker Arib | Web Developer | All rights reserved.
         </p>
     </div>
   )
