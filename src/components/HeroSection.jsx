@@ -95,7 +95,7 @@ const HeroSection = () => {
           ></motion.div>
         </>
       )}
-      <div className="relative z-20 flex w-full md:w-1/2 px-6 sm:px-14 pt-10 md:pt-30 lg:pt-30 items-center justify-center flex-col text-left">
+      <div className="relative z-20 flex w-full md:w-1/2 px-6 sm:px-14 pt-1 md:pt-30 lg:pt-30 items-center justify-center flex-col text-left">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: isIntroComplete ? 1 : 0 }}
