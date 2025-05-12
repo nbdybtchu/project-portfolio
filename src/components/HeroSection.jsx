@@ -42,7 +42,7 @@ const TAB_DATA = [
     title: "Education",
     id: "education",
     content: (
-      <ul className="list-disc pl-2">
+      <ul className="list-disc pl-6">
         <li>Zuitt Coding Bootcamp</li>
         <li>St. John Bosco Institute of Arts and Sciences, Makati</li>
       </ul>
@@ -52,7 +52,7 @@ const TAB_DATA = [
     title: "Certifications",
     id: "certifications",
     content: (
-      <ul className="list-disc pl-2">
+      <ul className="list-disc pl-6">
         <li>Zuitte Coding Bootcamp Full Stack Web Developer Certificate</li>
       </ul>
     ),
@@ -105,32 +105,36 @@ const HeroSection = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase tracking-base text-left text-transparent bg-clip-text bg-gradient-to-r from-green-700 to-green-900">
             {PROFILE.name}
           </h1>
-          <div className="pt-2 text-xs font-extrabold uppercase px-1 text-[#efefef]">
+          <div className="pt-1 text-xs font-extrabold uppercase px-1 text-[#efefef]">
             <TypeAnimation
               sequence={[
                 "Full-stack React Developer",
-                1000,
-                "With a flair for graphic design",
-                1000,
+                1200,
+                "Building,",
+                1200,
+                "Learning,",
+                1200,
+                "Keeping it Simple.",
+                1200,
               ]}
               wrapper="span"
               speed={50}
               repeat={Infinity}
             />
           </div>
-          <motion.h2
+          {/* <motion.h2
             initial={{ opacity: 0, y: -40 }}
             animate={{ opacity: isIntroComplete ? 1 : 0, y: isIntroComplete ? 0 : -40 }}
             transition={{ duration: 1 }}
             className="text-1xl md:text-2xl font-extrabold text-white px-1 mt-8 tracking-normal"
           >
             Building, Learning, and Keeping it Simple.
-          </motion.h2>
+          </motion.h2> */}
           <motion.p
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: isIntroComplete ? 1 : 0, x: isIntroComplete ? 0 : -40 }}
             transition={{ duration: 1.5 }}
-            className="text-sm md:text-base/5 mt-4 tracking-normal px-1 text-gray-300"
+            className="text-sm md:text-base/4.5 mt-6 tracking-normal px-1 text-white"
           >
             Full Stack React Developer with a passion for continuous learning and building solutions that matter. From designing responsive interfaces to creating dynamic web applications, I use my expertise in JavaScript, React, and Node.js to craft solutions that grow with the needs of users.
           </motion.p>
